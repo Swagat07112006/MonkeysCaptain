@@ -1,0 +1,20 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "format": "prettier --write .",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4",
+    "prettier-plugin-classnames": "^0.10.3",
+    "prettier-plugin-merge": "^0.10.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.0"
+  }
+}

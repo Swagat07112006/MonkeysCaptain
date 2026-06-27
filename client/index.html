@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/favicon-48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/style.css"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>The Monkey's Captain</title>
+  </head>
+  <body>
+    <header
+      class="relative z-20 mx-auto w-full max-w-7xl pt-7"
+      id="home"
+    >
+      <img
+        class="absolute -top-4 left-6 z-30 w-52 xl:-top-6 xl:left-10
+          xl:w-64"
+        src="./src/assets/monkey-logo.png"
+        alt="The Monkey's Captain"
+      />
+      <nav
+        class="relative z-20 mx-auto flex w-full justify-center"
+        aria-label="Primary navigation"
+      >
+        <div class="flex items-center gap-9 text-sm font-medium">
+          <a
+            class="border-brand-yellow text-brand-yellow border-b-2
+              px-0.5 pb-1.5 transition-colors duration-200"
+            data-nav-link
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="text-brand-white hover:text-brand-yellow border-b-2
+              border-transparent px-0.5 pb-1.5 transition-colors
+              duration-200"
+            data-nav-link
+            href="#menu"
+            >Menu</a
+          >
+          <a
+            class="text-brand-white hover:text-brand-yellow border-b-2
+              border-transparent px-0.5 pb-1.5 transition-colors
+              duration-200"
+            data-nav-link
+            href="#about"
+            >About Us</a
+          >
+          <a
+            class="text-brand-white hover:text-brand-yellow border-b-2
+              border-transparent px-0.5 pb-1.5 transition-colors
+              duration-200"
+            data-nav-link
+            href="#gallery"
+            >Gallery</a
+          >
+          <a
+            class="text-brand-white hover:text-brand-yellow border-b-2
+              border-transparent px-0.5 pb-1.5 transition-colors
+              duration-200"
+            data-nav-link
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+      </nav>
+      <a
+        class="bg-brand-yellow absolute top-4 right-6 z-20 flex
+          items-center gap-2 rounded-full px-5 py-2.5 text-sm
+          font-semibold text-neutral-950 transition-colors duration-200
+          hover:bg-yellow-300 xl:right-10"
+        href="#contact"
+      >
+        Book for Your Event
+        <svg
+          class="size-4 translate-y-px"
+          viewBox="0 0 640 640"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1
+              534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3
+              501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4
+              117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2
+              297.3z"
+          />
+        </svg>
+      </a>
+    </header>
+    <main>
+      <section
+        class="relative min-h-[calc(100vh-3.5rem)] w-full
+          overflow-hidden pt-28"
+      >
+        <div
+          class="absolute inset-y-0 right-0 z-0"
+          data-hero-media
+        >
+          <img
+            class="h-full w-auto max-w-none"
+            src="./src/assets/monkeys-captain-hero.png"
+            alt="The Monkey's Captain food stall"
+          />
+        </div>
+
+        <div
+          class="relative z-10 mx-auto grid w-full max-w-7xl
+            grid-cols-12 px-10"
+        >
+          <div
+            class="col-span-5"
+            data-hero-content
+          >
+            <div
+              class="text-5xl leading-none font-black tracking-tight
+                xl:text-6xl"
+              data-hero-heading
+            >
+              <p class="text-brand-white">HOT FOOD.</p>
+              <p class="text-brand-yellow mt-2">HUNGRY HEARTS.</p>
+            </div>
+
+            <div data-hero-divider></div>
+            <div data-hero-description></div>
+            <div data-hero-actions>
+              <div data-primary-action></div>
+              <div data-secondary-action></div>
+            </div>
+            <div data-hero-highlights>
+              <div data-highlight></div>
+              <div data-highlight></div>
+              <div data-highlight></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      type="module"
+      src="/src/main.ts"
+    ></script>
+  </body>
+</html>

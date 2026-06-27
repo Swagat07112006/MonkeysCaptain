@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-classnames",
+    "prettier-plugin-merge"
+  ],
+  "printWidth": 80,
+  "singleAttributePerLine": true,
+  "syntaxTransformation": true,
+  "classnamesPrintWidth": 72
+}
