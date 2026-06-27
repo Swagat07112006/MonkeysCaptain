@@ -33,6 +33,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <meta
+      name="description"
+      content="Bold street food and event catering from The Monkey's Captain."
+    />
     <title>The Monkey's Captain</title>
   </head>
   <body>
@@ -41,13 +45,16 @@
       id="home"
     >
       <img
-        class="absolute -top-4 left-6 z-30 w-52 xl:-top-6 xl:left-10
-          xl:w-64"
+        class="absolute top-1 left-4 z-30 w-28 md:-top-4 md:left-6
+          md:w-52 xl:-top-6 xl:left-10 xl:w-64"
         src="./src/assets/monkey-logo.png"
         alt="The Monkey's Captain"
+        width="1024"
+        height="1024"
       />
       <nav
-        class="relative z-20 mx-auto flex w-full justify-center"
+        class="relative z-20 mx-auto hidden w-full justify-center
+          md:flex"
         aria-label="Primary navigation"
       >
         <div class="flex items-center gap-9 text-sm font-medium">
@@ -56,6 +63,7 @@
               px-0.5 pb-1.5 transition-colors duration-200"
             data-nav-link
             href="#home"
+            aria-current="page"
             >Home</a
           >
           <a
@@ -93,10 +101,13 @@
         </div>
       </nav>
       <a
-        class="bg-brand-yellow absolute top-4 right-6 z-20 flex
-          items-center gap-2 rounded-full px-5 py-2.5 text-sm
+        class="bg-brand-yellow absolute top-4 right-4 z-20 flex
+          items-center gap-2 rounded-full px-4 py-2.5 text-xs
           font-semibold text-neutral-950 transition-colors duration-200
-          hover:bg-yellow-300 xl:right-10"
+          hover:bg-yellow-300 focus-visible:outline-2
+          focus-visible:outline-offset-4
+          focus-visible:outline-yellow-300 md:right-6 md:px-5 md:text-sm
+          xl:right-10"
         href="#contact"
       >
         Book for Your Event
@@ -119,42 +130,226 @@
     <main>
       <section
         class="relative min-h-[calc(100vh-3.5rem)] w-full
-          overflow-hidden pt-28"
+          overflow-hidden pt-24 md:pt-28"
+        aria-labelledby="hero-title"
       >
-        <div
-          class="absolute inset-y-0 right-0 z-0"
-          data-hero-media
-        >
+        <div class="absolute inset-0 z-0 md:inset-y-0 md:right-0
+          md:left-auto">
           <img
-            class="h-full w-auto max-w-none"
+            class="h-full w-full object-cover object-[72%_center]
+              md:w-auto md:max-w-none md:object-fill"
             src="./src/assets/monkeys-captain-hero.png"
             alt="The Monkey's Captain food stall"
+            width="1672"
+            height="941"
+            fetchpriority="high"
           />
+          <div
+            class="absolute inset-0 bg-black/55 md:hidden"
+            aria-hidden="true"
+          ></div>
         </div>
 
         <div
           class="relative z-10 mx-auto grid w-full max-w-7xl
-            grid-cols-12 px-10"
+            grid-cols-12 px-5 md:px-8 lg:px-10"
         >
-          <div
-            class="col-span-5 mt-12"
-            data-hero-content
-          >
-            <div class="hero-heading" data-hero-heading>
-              <p class="text-brand-white">HOT FOOD.</p>
-              <p class="text-brand-yellow">HUNGRY HEARTS.</p>
-            </div>
+          <div class="col-span-12 mt-8 md:col-span-6 md:mt-12
+            xl:col-span-5">
+            <h1
+              class="hero-heading"
+              id="hero-title"
+            >
+              <span class="text-brand-white">HOT FOOD.</span>
+              <span class="text-brand-yellow">HUNGRY HEARTS.</span>
+            </h1>
 
-            <div data-hero-divider></div>
-            <div data-hero-description></div>
-            <div data-hero-actions>
-              <div data-primary-action></div>
-              <div data-secondary-action></div>
+            <div
+              class="hero-brush"
+              aria-hidden="true"
+            >
+              <svg
+                viewBox="0 0 430 24"
+                role="presentation"
+              >
+                <path
+                  d="M1 21L41 13C127 10 214 8 300 5L429 0L426 4L423 4
+                    L422 7L419 8L418 11L414 11L411 15L326 14L273 15
+                    L221 16L170 18L119 18L73 21L36 19Z"
+                  fill="currentColor"
+                />
+              </svg>
             </div>
-            <div data-hero-highlights>
-              <div data-highlight></div>
-              <div data-highlight></div>
-              <div data-highlight></div>
+            <p
+              class="text-brand-white mt-5 max-w-sm text-lg leading-snug
+                font-medium"
+            >
+              Delicious bites. Bold flavors.<br />
+              Made with passion, served with love.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                class="bg-brand-yellow inline-flex min-h-12 items-center
+                  justify-center gap-2 rounded-full px-6 py-3 text-sm
+                  font-bold text-neutral-950 transition duration-200
+                  ease-out hover:-translate-y-0.5 hover:bg-yellow-300
+                  focus-visible:outline-2 focus-visible:outline-offset-4
+                  focus-visible:outline-yellow-300"
+                href="#contact"
+              >
+                Book for Your Event
+                <svg
+                  class="size-4"
+                  viewBox="0 0 640 640"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1
+                      342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8
+                      534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2
+                      320L233.9 150.6C221.4 138.1 221.4 117.8 233.9
+                      105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2
+                      297.3z"
+                  />
+                </svg>
+              </a>
+              <a
+                class="text-brand-white group hover:text-brand-yellow
+                  inline-flex min-h-12 items-center justify-center gap-3
+                  px-2 py-3 text-sm font-bold transition duration-200
+                  ease-out focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-yellow-300"
+                href="https://www.google.com/maps/search/?api=1&amp;query=The+Monkey%27s+Captain"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  class="border-brand-yellow text-brand-yellow size-9
+                    rounded-full border p-2 transition-transform
+                    duration-200 ease-out group-hover:-translate-y-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2
+                      0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle
+                    cx="12"
+                    cy="10"
+                    r="2.5"
+                  />
+                </svg>
+                <span
+                  class="border-brand-yellow/50
+                    group-hover:border-brand-yellow border-b pb-1
+                    transition-colors duration-200"
+                >
+                  Find Us on Maps
+                </span>
+              </a>
+            </div>
+            <div
+              class="mt-10 grid max-w-md grid-cols-3 divide-x
+                divide-white/15 border-t border-white/10 pt-6"
+              aria-label="What makes our food special"
+            >
+              <div class="flex flex-col items-center gap-2 px-3
+                text-center">
+                <svg
+                  class="highlight-icon text-brand-yellow size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4
+                      4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0
+                      0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0
+                      0 0 1 1Z"
+                  />
+                  <path d="M6 17h12" />
+                </svg>
+                <p
+                  class="text-brand-white text-[0.68rem] leading-tight
+                    font-bold uppercase"
+                >
+                  Freshly<br />Made
+                </p>
+              </div>
+              <div class="flex flex-col items-center gap-2 px-3
+                text-center">
+                <svg
+                  class="highlight-icon size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    class="stroke-brand-yellow"
+                    stroke-width="3.4"
+                    d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1
+                      1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                  />
+                  <path
+                    class="stroke-red-600"
+                    stroke-width="1.8"
+                    d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1
+                      1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"
+                  />
+                </svg>
+                <p
+                  class="text-brand-white text-[0.68rem] leading-tight
+                    font-bold uppercase"
+                >
+                  Bold &amp; Unique<br />Flavors
+                </p>
+              </div>
+              <div class="flex flex-col items-center gap-2 px-3
+                text-center">
+                <svg
+                  class="highlight-icon size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    class="stroke-brand-yellow"
+                    stroke-width="3"
+                    d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0
+                      .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3
+                      5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+                  />
+                  <path
+                    class="fill-red-600 stroke-red-600"
+                    stroke-width="1.2"
+                    d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0
+                      .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3
+                      5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+                  />
+                </svg>
+                <p
+                  class="text-brand-white text-[0.68rem] leading-tight
+                    font-bold uppercase"
+                >
+                  Made With<br />Love
+                </p>
+              </div>
             </div>
           </div>
         </div>

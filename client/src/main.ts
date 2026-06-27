@@ -1,26 +1,33 @@
+const DEFAULT_SECTION_HASH = "#home";
+const ACTIVE_LINK_CLASSES = ["border-brand-yellow", "text-brand-yellow"];
+const INACTIVE_LINK_CLASSES = ["border-transparent", "text-brand-white"];
+
 const navLinks =
   document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]");
 
-const activeClasses = ["border-brand-yellow", "text-brand-yellow"];
-const inactiveClasses = ["border-transparent", "text-brand-white"];
+function setActiveLink(hash: string): void {
+  const activeHash = hash || DEFAULT_SECTION_HASH;
 
-function setActiveLink(hash: string) {
   navLinks.forEach((link) => {
-    const isActive = link.hash === hash;
+    const isActive = link.hash === activeHash;
 
-    link.classList.toggle(activeClasses[0], isActive);
-    link.classList.toggle(activeClasses[1], isActive);
-    link.classList.toggle(inactiveClasses[0], !isActive);
-    link.classList.toggle(inactiveClasses[1], !isActive);
+    ACTIVE_LINK_CLASSES.forEach((className) => {
+      link.classList.toggle(className, isActive);
+    });
+    INACTIVE_LINK_CLASSES.forEach((className) => {
+      link.classList.toggle(className, !isActive);
+    });
+
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => setActiveLink(link.hash));
-});
-
 window.addEventListener("hashchange", () => {
-  setActiveLink(window.location.hash || "#home");
+  setActiveLink(window.location.hash);
 });
 
-setActiveLink(window.location.hash || "#home");
+setActiveLink(window.location.hash);
