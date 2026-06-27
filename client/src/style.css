@@ -26,6 +26,22 @@
   box-sizing: border-box;
 }
 
+.hero-heading {
+  width: max-content;
+  transform: rotate(-2deg);
+  transform-origin: left center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(3.4rem, 5vw, 4.75rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+.hero-heading p + p {
+  margin-top: 0.18em;
+}
+
 html {
   scroll-behavior: smooth;
 }
