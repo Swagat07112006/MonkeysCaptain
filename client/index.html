@@ -41,20 +41,20 @@
   </head>
   <body>
     <header
-      class="relative z-20 mx-auto w-full max-w-7xl pt-7"
+      class="site-header relative z-20 mx-auto w-full max-w-7xl pt-7"
       id="home"
     >
       <img
-        class="absolute top-1 left-4 z-30 w-28 md:-top-4 md:left-6
-          md:w-52 xl:-top-6 xl:left-10 xl:w-64"
+        class="site-logo absolute -top-4 left-6 z-30 w-52 xl:-top-6
+          xl:left-10 xl:w-64"
         src="./src/assets/monkey-logo.png"
         alt="The Monkey's Captain"
         width="1024"
         height="1024"
       />
       <nav
-        class="relative z-20 mx-auto hidden w-full justify-center
-          md:flex"
+        class="desktop-nav relative z-20 mx-auto flex w-full
+          justify-center"
         aria-label="Primary navigation"
       >
         <div class="flex items-center gap-9 text-sm font-medium">
@@ -101,13 +101,12 @@
         </div>
       </nav>
       <a
-        class="bg-brand-yellow absolute top-4 right-4 z-20 flex
-          items-center gap-2 rounded-full px-4 py-2.5 text-xs
+        class="header-event-link bg-brand-yellow absolute top-4 right-6
+          z-20 flex items-center gap-2 rounded-full px-5 py-2.5 text-sm
           font-semibold text-neutral-950 transition-colors duration-200
           hover:bg-yellow-300 focus-visible:outline-2
           focus-visible:outline-offset-4
-          focus-visible:outline-yellow-300 md:right-6 md:px-5 md:text-sm
-          xl:right-10"
+          focus-visible:outline-yellow-300 xl:right-10"
         href="#contact"
       >
         Book for Your Event
@@ -126,36 +125,52 @@
           />
         </svg>
       </a>
+
+      <a
+        class="mobile-menu-link text-brand-white hidden items-center
+          justify-center rounded-full focus-visible:outline-2
+          focus-visible:outline-offset-4
+          focus-visible:outline-yellow-300"
+        href="#menu"
+        aria-label="Jump to menu"
+      >
+        <svg
+          class="size-10"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 6h16" />
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+        </svg>
+      </a>
     </header>
     <main>
       <section
-        class="relative min-h-[calc(100vh-3.5rem)] w-full
-          overflow-hidden pt-24 md:pt-28"
+        class="hero-section relative min-h-[calc(100vh-3.5rem)] w-full
+          overflow-hidden pt-28"
         aria-labelledby="hero-title"
       >
-        <div class="absolute inset-0 z-0 md:inset-y-0 md:right-0
-          md:left-auto">
+        <div class="hero-media absolute inset-y-0 right-0 z-0">
           <img
-            class="h-full w-full object-cover object-[72%_center]
-              md:w-auto md:max-w-none md:object-fill"
+            class="h-full w-auto max-w-none"
             src="./src/assets/monkeys-captain-hero.png"
             alt="The Monkey's Captain food stall"
             width="1672"
             height="941"
             fetchpriority="high"
           />
-          <div
-            class="absolute inset-0 bg-black/55 md:hidden"
-            aria-hidden="true"
-          ></div>
         </div>
 
         <div
-          class="relative z-10 mx-auto grid w-full max-w-7xl
-            grid-cols-12 px-5 md:px-8 lg:px-10"
+          class="hero-grid relative z-10 mx-auto grid w-full max-w-7xl
+            grid-cols-12 px-10"
         >
-          <div class="col-span-12 mt-8 md:col-span-6 md:mt-12
-            xl:col-span-5">
+          <div class="hero-copy col-span-5 mt-12">
             <h1
               class="hero-heading"
               id="hero-title"
@@ -163,6 +178,26 @@
               <span class="text-brand-white">HOT FOOD.</span>
               <span class="text-brand-yellow">HUNGRY HEARTS.</span>
             </h1>
+            <svg
+              class="mobile-heart-doodle text-brand-yellow hidden"
+              viewBox="0 0 92 78"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M45 65C27 50 12 39 12 23c0-8 6-14 14-14 7 0 12 5 16 11
+                  4-6 9-11 16-11 8 0 14 6 14 14 0 16-15 27-33 42Z"
+                stroke="currentColor"
+                stroke-width="6"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7 47H1M16 63l-5 5M75 59l7 6M82 37h8M72 15l5-9"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+            </svg>
 
             <div
               class="hero-brush"
@@ -187,7 +222,10 @@
               Delicious bites. Bold flavors.<br />
               Made with passion, served with love.
             </p>
-            <div class="mt-8 flex flex-wrap items-center gap-4">
+            <div
+              class="desktop-hero-actions mt-8 flex flex-wrap
+                items-center gap-4"
+            >
               <a
                 class="bg-brand-yellow inline-flex min-h-12 items-center
                   justify-center gap-2 rounded-full px-6 py-3 text-sm
@@ -256,9 +294,70 @@
                 </span>
               </a>
             </div>
+            <div class="mobile-hero-actions hidden items-center gap-3">
+              <a
+                class="bg-brand-yellow inline-flex items-center
+                  justify-center gap-2 rounded-full font-bold
+                  text-neutral-950 transition-colors duration-200
+                  hover:bg-yellow-300 focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-yellow-300"
+                href="#contact"
+              >
+                Book for Your Event
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </a>
+              <a
+                class="border-brand-yellow text-brand-white
+                  hover:bg-brand-yellow inline-flex items-center
+                  justify-center gap-2 rounded-full border font-bold
+                  transition-colors duration-200 hover:text-neutral-950
+                  focus-visible:outline-2 focus-visible:outline-offset-4
+                  focus-visible:outline-yellow-300"
+                href="https://www.google.com/maps/search/?api=1&amp;query=The+Monkey%27s+Captain"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Find Us on Maps
+                <svg
+                  class="text-brand-yellow size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </a>
+            </div>
             <div
-              class="mt-10 grid max-w-md grid-cols-3 divide-x
-                divide-white/15 border-t border-white/10 pt-6"
+              class="mobile-hero-stall hidden"
+              aria-hidden="true"
+            >
+              <img
+                src="./src/assets/monkeys-captain-hero-mobile.png"
+                alt=""
+                width="941"
+                height="1672"
+              />
+            </div>
+            <div
+              class="hero-highlights mt-10 grid max-w-md grid-cols-3
+                divide-x divide-white/15 border-t border-white/10 pt-6"
               aria-label="What makes our food special"
             >
               <div class="flex flex-col items-center gap-2 px-3
@@ -348,6 +447,33 @@
                     font-bold uppercase"
                 >
                   Made With<br />Love
+                </p>
+              </div>
+              <div
+                class="mobile-extra-highlight hidden flex-col
+                  items-center gap-2 px-3 text-center"
+              >
+                <svg
+                  class="highlight-icon text-brand-yellow size-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0" />
+                  <path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0" />
+                  <path d="M5 17H3v-4l3-2h7l2 3h3l3 3h-2" />
+                  <path d="M9 17h6" />
+                  <path d="M8 11V8h4l1 3" />
+                </svg>
+                <p
+                  class="text-brand-white text-[0.68rem] leading-tight
+                    font-bold uppercase"
+                >
+                  Fast &amp; Friendly<br />Service
                 </p>
               </div>
             </div>
