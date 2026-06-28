@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html
+  class="scroll-smooth"
+  lang="en"
+>
   <head>
     <meta charset="UTF-8" />
     <link
@@ -39,14 +42,19 @@
     />
     <title>The Monkey's Captain</title>
   </head>
-  <body>
+  <body class="overflow-x-hidden">
     <header
-      class="site-header relative z-20 mx-auto w-full max-w-7xl pt-7"
+      class="site-header relative z-20 mx-auto w-full max-w-7xl pt-7
+        max-[40rem]:absolute max-[40rem]:inset-x-0 max-[40rem]:top-0
+        max-[40rem]:z-30 max-[40rem]:h-34 max-[40rem]:max-w-none
+        max-[40rem]:pt-0"
       id="home"
     >
       <img
-        class="site-logo absolute -top-4 left-6 z-30 w-52 xl:-top-6
-          xl:left-10 xl:w-64"
+        class="site-logo absolute -top-4 left-6 z-30 w-52
+          max-[40rem]:top-4 max-[40rem]:left-[1.1rem]
+          max-[40rem]:w-[clamp(7.5rem,34vw,10rem)] xl:-top-6 xl:left-10
+          xl:w-64"
         src="./src/assets/monkey-logo.png"
         alt="The Monkey's Captain"
         width="1024"
@@ -54,7 +62,7 @@
       />
       <nav
         class="desktop-nav relative z-20 mx-auto flex w-full
-          justify-center"
+          justify-center max-[40rem]:hidden"
         aria-label="Primary navigation"
       >
         <div class="flex items-center gap-9 text-sm font-medium">
@@ -106,7 +114,8 @@
           font-semibold text-neutral-950 transition-colors duration-200
           hover:bg-yellow-300 focus-visible:outline-2
           focus-visible:outline-offset-4
-          focus-visible:outline-yellow-300 xl:right-10"
+          focus-visible:outline-yellow-300 max-[40rem]:hidden
+          xl:right-10"
         href="#contact"
       >
         Book for Your Event
@@ -131,7 +140,7 @@
           right-4 z-50 hidden size-12 items-center justify-center
           rounded-full focus-visible:outline-2
           focus-visible:outline-offset-4
-          focus-visible:outline-yellow-300"
+          focus-visible:outline-yellow-300 max-[40rem]:inline-flex"
         type="button"
         aria-label="Open menu"
         aria-expanded="false"
@@ -213,10 +222,16 @@
     <main>
       <section
         class="hero-section relative min-h-[calc(100vh-3.5rem)] w-full
-          overflow-hidden pt-28"
+          overflow-hidden pt-28 max-[40rem]:isolate
+          max-[40rem]:min-h-[100svh]
+          max-[40rem]:pt-[clamp(10.6rem,38vw,13rem)]
+          max-[40rem]:pb-[1.35rem]"
         aria-labelledby="hero-title"
       >
-        <div class="hero-media absolute inset-y-0 right-0 z-0">
+        <div
+          class="hero-media absolute inset-y-0 right-0 z-0
+            max-[40rem]:hidden"
+        >
           <img
             class="h-full w-auto max-w-none"
             src="./src/assets/monkeys-captain-hero.png"
@@ -229,9 +244,13 @@
 
         <div
           class="hero-grid relative z-10 mx-auto grid w-full max-w-7xl
-            grid-cols-12 px-10"
+            grid-cols-12 px-10 max-[40rem]:block
+            max-[40rem]:px-[clamp(1.15rem,5vw,1.75rem)]"
         >
-          <div class="hero-copy col-span-5 mt-12">
+          <div
+            class="hero-copy col-span-5 mt-12 max-[40rem]:relative
+              max-[40rem]:col-span-full max-[40rem]:mt-0"
+          >
             <h1
               class="hero-heading"
               id="hero-title"
@@ -240,7 +259,12 @@
               <span class="text-brand-yellow">HUNGRY HEARTS.</span>
             </h1>
             <svg
-              class="mobile-heart-doodle text-brand-yellow hidden"
+              class="mobile-heart-doodle text-brand-yellow hidden
+                max-[40rem]:absolute max-[40rem]:top-0
+                max-[40rem]:right-[clamp(0rem,2vw,0.45rem)]
+                max-[40rem]:block
+                max-[40rem]:w-[clamp(2.75rem,11vw,3.6rem)]
+                max-[40rem]:rotate-[7deg]"
               viewBox="0 0 92 78"
               fill="none"
               aria-hidden="true"
@@ -261,7 +285,8 @@
             </svg>
 
             <div
-              class="hero-brush"
+              class="hero-brush max-[40rem]:mt-[0.65rem]
+                max-[40rem]:w-[min(96%,25rem)]"
               aria-hidden="true"
             >
               <svg
@@ -278,14 +303,17 @@
             </div>
             <p
               class="text-brand-white mt-5 max-w-sm text-lg leading-snug
-                font-medium"
+                font-medium max-[40rem]:mt-[1.15rem]
+                max-[40rem]:max-w-[22rem]
+                max-[40rem]:text-[clamp(1.16rem,4.65vw,1.55rem)]
+                max-[40rem]:leading-[1.35]"
             >
               Delicious bites. Bold flavors.<br />
               Made with passion, served with love.
             </p>
             <div
               class="desktop-hero-actions mt-8 flex flex-wrap
-                items-center gap-4"
+                items-center gap-4 max-[40rem]:hidden"
             >
               <a
                 class="bg-brand-yellow inline-flex min-h-12 items-center
@@ -355,7 +383,11 @@
                 </span>
               </a>
             </div>
-            <div class="mobile-hero-actions hidden items-center gap-3">
+            <div
+              class="mobile-hero-actions hidden items-center gap-3
+                max-[40rem]:mt-[1.9rem] max-[40rem]:flex
+                max-[40rem]:flex-col"
+            >
               <a
                 class="bg-brand-yellow inline-flex items-center
                   justify-center gap-2 rounded-full font-bold
@@ -406,10 +438,20 @@
               </a>
             </div>
             <div
-              class="mobile-hero-stall hidden"
+              class="mobile-hero-stall hidden max-[40rem]:relative
+                max-[40rem]:mx-[-2.25rem]
+                max-[40rem]:mt-[clamp(0.7rem,3vw,1rem)]
+                max-[40rem]:mb-[calc(-1*clamp(8rem,26vw,10rem))]
+                max-[40rem]:block
+                max-[40rem]:h-[clamp(31rem,132vw,48rem)]
+                max-[40rem]:overflow-hidden"
               aria-hidden="true"
             >
               <img
+                class="max-[40rem]:absolute max-[40rem]:inset-0
+                  max-[40rem]:h-full max-[40rem]:w-full
+                  max-[40rem]:object-cover
+                  max-[40rem]:object-[center_70%]"
                 src="./src/assets/monkeys-captain-hero-mobile.png"
                 alt=""
                 width="941"
@@ -418,13 +460,21 @@
             </div>
             <div
               class="hero-highlights mt-10 grid max-w-md grid-cols-3
-                divide-x divide-white/15 border-t border-white/10 pt-6"
+                divide-x divide-white/15 border-t border-white/10 pt-6
+                max-[40rem]:relative max-[40rem]:z-3 max-[40rem]:mt-0
+                max-[40rem]:max-w-none max-[40rem]:grid-cols-3
+                max-[40rem]:rounded-[1.05rem] max-[40rem]:border
+                max-[40rem]:border-white/18 max-[40rem]:px-[0.2rem]
+                max-[40rem]:pt-[0.68rem] max-[40rem]:pb-[0.72rem]"
               aria-label="What makes our food special"
             >
-              <div class="flex flex-col items-center gap-2 px-3
-                text-center">
+              <div
+                class="flex flex-col items-center gap-2 px-3 text-center
+                  max-[40rem]:gap-[0.32rem] max-[40rem]:px-[0.35rem]"
+              >
                 <svg
-                  class="highlight-icon text-brand-yellow size-8"
+                  class="highlight-icon text-brand-yellow size-8
+                    max-[40rem]:size-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -443,15 +493,19 @@
                 </svg>
                 <p
                   class="text-brand-white text-[0.68rem] leading-tight
-                    font-bold uppercase"
+                    font-bold uppercase
+                    max-[40rem]:text-[clamp(0.52rem,2.25vw,0.64rem)]
+                    max-[40rem]:leading-[1.22]"
                 >
                   Freshly<br />Made
                 </p>
               </div>
-              <div class="flex flex-col items-center gap-2 px-3
-                text-center">
+              <div
+                class="flex flex-col items-center gap-2 px-3 text-center
+                  max-[40rem]:gap-[0.32rem] max-[40rem]:px-[0.35rem]"
+              >
                 <svg
-                  class="highlight-icon size-8"
+                  class="highlight-icon size-8 max-[40rem]:size-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke-linecap="round"
@@ -473,15 +527,19 @@
                 </svg>
                 <p
                   class="text-brand-white text-[0.68rem] leading-tight
-                    font-bold uppercase"
+                    font-bold uppercase
+                    max-[40rem]:text-[clamp(0.52rem,2.25vw,0.64rem)]
+                    max-[40rem]:leading-[1.22]"
                 >
                   Bold &amp; Unique<br />Flavors
                 </p>
               </div>
-              <div class="flex flex-col items-center gap-2 px-3
-                text-center">
+              <div
+                class="flex flex-col items-center gap-2 px-3 text-center
+                  max-[40rem]:gap-[0.32rem] max-[40rem]:px-[0.35rem]"
+              >
                 <svg
-                  class="highlight-icon size-8"
+                  class="highlight-icon size-8 max-[40rem]:size-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke-linecap="round"
@@ -505,7 +563,9 @@
                 </svg>
                 <p
                   class="text-brand-white text-[0.68rem] leading-tight
-                    font-bold uppercase"
+                    font-bold uppercase
+                    max-[40rem]:text-[clamp(0.52rem,2.25vw,0.64rem)]
+                    max-[40rem]:leading-[1.22]"
                 >
                   Made With<br />Love
                 </p>
