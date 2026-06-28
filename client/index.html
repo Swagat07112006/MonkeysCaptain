@@ -126,13 +126,16 @@
         </svg>
       </a>
 
-      <a
-        class="mobile-menu-link text-brand-white hidden items-center
+      <button
+        class="mobile-menu-toggle text-brand-white hidden items-center
           justify-center rounded-full focus-visible:outline-2
           focus-visible:outline-offset-4
           focus-visible:outline-yellow-300"
-        href="#menu"
-        aria-label="Jump to menu"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        data-mobile-menu-toggle
       >
         <svg
           class="size-10"
@@ -143,11 +146,60 @@
           stroke-linecap="round"
           aria-hidden="true"
         >
-          <path d="M4 6h16" />
-          <path d="M4 12h16" />
-          <path d="M4 18h16" />
+          <path
+            class="hamburger-line hamburger-line-top"
+            d="M4 6h16"
+          />
+          <path
+            class="hamburger-line hamburger-line-middle"
+            d="M4 12h16"
+          />
+          <path
+            class="hamburger-line hamburger-line-bottom"
+            d="M4 18h16"
+          />
         </svg>
-      </a>
+      </button>
+      <button
+        class="mobile-nav-backdrop"
+        type="button"
+        aria-label="Close menu"
+        data-mobile-menu-backdrop
+        hidden
+      ></button>
+      <nav
+        class="mobile-nav"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+        data-mobile-menu
+        hidden
+      >
+        <a
+          data-mobile-nav-link
+          href="#home"
+          >Home</a
+        >
+        <a
+          data-mobile-nav-link
+          href="#menu"
+          >Menu</a
+        >
+        <a
+          data-mobile-nav-link
+          href="#about"
+          >About Us</a
+        >
+        <a
+          data-mobile-nav-link
+          href="#gallery"
+          >Gallery</a
+        >
+        <a
+          data-mobile-nav-link
+          href="#contact"
+          >Contact</a
+        >
+      </nav>
     </header>
     <main>
       <section
@@ -447,33 +499,6 @@
                     font-bold uppercase"
                 >
                   Made With<br />Love
-                </p>
-              </div>
-              <div
-                class="mobile-extra-highlight hidden flex-col
-                  items-center gap-2 px-3 text-center"
-              >
-                <svg
-                  class="highlight-icon text-brand-yellow size-8"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.9"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0" />
-                  <path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0" />
-                  <path d="M5 17H3v-4l3-2h7l2 3h3l3 3h-2" />
-                  <path d="M9 17h6" />
-                  <path d="M8 11V8h4l1 3" />
-                </svg>
-                <p
-                  class="text-brand-white text-[0.68rem] leading-tight
-                    font-bold uppercase"
-                >
-                  Fast &amp; Friendly<br />Service
                 </p>
               </div>
             </div>
