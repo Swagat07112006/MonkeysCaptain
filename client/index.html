@@ -127,8 +127,9 @@
       </a>
 
       <button
-        class="mobile-menu-toggle text-brand-white hidden items-center
-          justify-center rounded-full focus-visible:outline-2
+        class="mobile-menu-toggle text-brand-white absolute top-7
+          right-4 z-50 hidden size-12 items-center justify-center
+          rounded-full focus-visible:outline-2
           focus-visible:outline-offset-4
           focus-visible:outline-yellow-300"
         type="button"
@@ -161,40 +162,48 @@
         </svg>
       </button>
       <button
-        class="mobile-nav-backdrop"
+        class="mobile-nav-backdrop fixed inset-0 z-30 hidden
+          bg-black/60"
         type="button"
         aria-label="Close menu"
         data-mobile-menu-backdrop
         hidden
       ></button>
       <nav
-        class="mobile-nav"
+        class="mobile-nav fixed top-0 right-0 bottom-0 z-40 hidden w-4/5
+          max-w-80 content-start gap-2 border-l border-white/15 px-4
+          pt-26 pb-5"
         id="mobile-menu"
         aria-label="Mobile navigation"
         data-mobile-menu
         hidden
       >
         <a
+          class="mobile-nav-link"
           data-mobile-nav-link
           href="#home"
           >Home</a
         >
         <a
+          class="mobile-nav-link"
           data-mobile-nav-link
           href="#menu"
           >Menu</a
         >
         <a
+          class="mobile-nav-link"
           data-mobile-nav-link
           href="#about"
           >About Us</a
         >
         <a
+          class="mobile-nav-link"
           data-mobile-nav-link
           href="#gallery"
           >Gallery</a
         >
         <a
+          class="mobile-nav-link"
           data-mobile-nav-link
           href="#contact"
           >Contact</a
