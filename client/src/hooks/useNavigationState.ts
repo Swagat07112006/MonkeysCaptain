@@ -11,7 +11,8 @@ export function useNavigationState() {
     const mobileMenuToggle = document.querySelector<HTMLButtonElement>(
       "[data-mobile-menu-toggle]",
     );
-    const mobileMenu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+    const mobileMenu =
+      document.querySelector<HTMLElement>("[data-mobile-menu]");
     const mobileMenuBackdrop = document.querySelector<HTMLButtonElement>(
       "[data-mobile-menu-backdrop]",
     );
