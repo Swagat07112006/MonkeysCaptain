@@ -456,18 +456,24 @@
                 max-[40rem]:after:content-['']"
               aria-hidden="true"
             >
-              <img
-                class="max-[40rem]:absolute max-[40rem]:inset-0
-                  max-[40rem]:h-full max-[40rem]:w-full
-                  max-[40rem]:object-cover
-                  max-[40rem]:object-[center_70%]
-                  max-[40rem]:contrast-[1.04]
-                  max-[40rem]:saturate-[1.08]"
-                src="./src/assets/monkeys-captain-hero-mobile.png"
-                alt=""
-                width="941"
-                height="1672"
-              />
+              <picture>
+                <source
+                  media="(min-width: 40.0625rem) and (max-width: 64rem)"
+                  srcset="./src/assets/monkeys-captain-hero-tablet-v2.png"
+                />
+                <img
+                  class="max-[40rem]:absolute max-[40rem]:inset-0
+                    max-[40rem]:h-full max-[40rem]:w-full
+                    max-[40rem]:object-cover
+                    max-[40rem]:object-[center_70%]
+                    max-[40rem]:contrast-[1.04]
+                    max-[40rem]:saturate-[1.08]"
+                  src="./src/assets/monkeys-captain-hero-mobile.png"
+                  alt=""
+                  width="941"
+                  height="1672"
+                />
+              </picture>
             </div>
             <div
               class="hero-highlights mt-10 grid max-w-[34rem]
@@ -507,19 +513,12 @@
                     />
                   </svg>
                 </span>
-                <span
-                  class="trust-value text-brand-white mt-[0.42rem]
-                    text-[clamp(1.75rem,2.7vw,2.35rem)] leading-[0.9]
-                    font-black tracking-[0.015em]
-                    max-[40rem]:mt-[0.36rem]
-                    max-[40rem]:text-[clamp(1.12rem,6vw,1.55rem)]"
-                  >5.0</span
-                >
                 <svg
-                  class="trust-stars text-brand-yellow mt-[-0.08rem]
-                    h-[0.82rem] w-[4.7rem]
-                    max-[40rem]:h-[clamp(0.52rem,2.6vw,0.64rem)]
-                    max-[40rem]:w-[clamp(3.15rem,15vw,3.75rem)]"
+                  class="trust-stars text-brand-yellow mt-[0.8rem]
+                    h-[1.18rem] w-[6.8rem]
+                    max-[40rem]:mt-[0.58rem]
+                    max-[40rem]:h-[clamp(0.78rem,4vw,0.95rem)]
+                    max-[40rem]:w-[clamp(4.55rem,22vw,5.55rem)]"
                   viewBox="0 0 120 20"
                   fill="currentColor"
                   aria-label="Five star Google rating"
