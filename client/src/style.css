@@ -95,6 +95,62 @@
   text-wrap: nowrap;
 }
 
+.best-sellers-divider-icon {
+  position: relative;
+  display: block;
+  width: 3.15rem;
+  height: 3.15rem;
+  border: 1px solid oklch(82% 0.19 85 / 0.56);
+  border-radius: 999rem;
+  background:
+    radial-gradient(circle at 50% 38%, oklch(19% 0.04 82), oklch(8% 0.018 250));
+  box-shadow:
+    0 0 0 0.28rem oklch(82% 0.19 85 / 0.08),
+    0 0.55rem 1.1rem oklch(0% 0 0 / 0.4),
+    inset 0 0.08rem 0 oklch(97% 0.008 85 / 0.22);
+  filter: drop-shadow(0 0 0.42rem oklch(82% 0.19 85 / 0.42));
+}
+
+.best-sellers-divider-icon::before {
+  position: absolute;
+  inset: 0.72rem;
+  content: "";
+  background: linear-gradient(180deg, oklch(86% 0.18 86), oklch(69% 0.18 78));
+  -webkit-mask:
+    url("./assets/fork-and-knife-meal-svgrepo-com.svg") center / contain
+      no-repeat;
+  mask: url("./assets/fork-and-knife-meal-svgrepo-com.svg") center / contain
+    no-repeat;
+}
+
+.best-sellers-grid > article {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.best-sellers-grid > article > div:last-child {
+  display: grid;
+  grid-template-rows: minmax(2rem, auto) minmax(4.85rem, 1fr) auto;
+  align-items: start;
+}
+
+.best-sellers-grid h3 {
+  display: grid;
+  min-height: 2rem;
+  place-items: center;
+}
+
+.best-sellers-grid p {
+  display: grid;
+  min-height: 4.85rem;
+  align-content: center;
+}
+
+.best-sellers-grid strong {
+  align-self: end;
+}
+
 @media (min-width: 40.0625rem) and (max-width: 64rem) {
   .site-header {
     position: absolute;
