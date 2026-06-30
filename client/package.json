@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "prettier": "^3.8.4",
     "prettier-plugin-classnames": "^0.10.3",
     "prettier-plugin-merge": "^0.10.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "~6.0.2",
     "vite": "^8.1.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   }
 }
