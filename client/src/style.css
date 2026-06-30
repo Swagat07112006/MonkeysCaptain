@@ -91,6 +91,10 @@
   text-shadow: 0 0.35rem 0.8rem oklch(0% 0 0 / 0.55);
 }
 
+.best-sellers-heading {
+  text-wrap: nowrap;
+}
+
 @media (min-width: 40.0625rem) and (max-width: 64rem) {
   .site-header {
     position: absolute;
@@ -171,7 +175,12 @@
       linear-gradient(oklch(92% 0.008 85 / 0.035) 1px, transparent 1px),
       linear-gradient(90deg, oklch(92% 0.008 85 / 0.03) 1px, transparent 1px);
     background-size: 5rem 5rem;
-    mask-image: linear-gradient(180deg, transparent, black 24%, transparent 92%);
+    mask-image: linear-gradient(
+      180deg,
+      transparent,
+      black 24%,
+      transparent 92%
+    );
     opacity: 0.5;
   }
 
