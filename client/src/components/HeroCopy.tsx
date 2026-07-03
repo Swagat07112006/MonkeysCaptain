@@ -1,3 +1,4 @@
+import heroBrushStroke from "../assets/hero-brush-stroke.svg";
 import { HeartDoodle } from "./HeartDoodle";
 
 export function HeroCopy() {
@@ -16,15 +17,7 @@ export function HeroCopy() {
           max-[40rem]:w-[min(96%,25rem)]`}
         aria-hidden="true"
       >
-        <svg
-          viewBox="0 0 430 24"
-          role="presentation"
-        >
-          <path
-            d="M1 21L41 13C127 10 214 8 300 5L429 0L426 4L423 4 L422 7L419 8L418 11L414 11L411 15L326 14L273 15 L221 16L170 18L119 18L73 21L36 19Z"
-            fill="currentColor"
-          />
-        </svg>
+        <img src={heroBrushStroke} alt="" width={395} height={32} />
       </div>
       <p
         className={`text-brand-white mt-5 max-w-sm text-lg leading-snug

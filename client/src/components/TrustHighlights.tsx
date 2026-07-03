@@ -15,7 +15,7 @@ export function TrustHighlights() {
         max-[40rem]:max-w-none max-[40rem]:grid-cols-3
         max-[40rem]:rounded-[1.05rem] max-[40rem]:border
         max-[40rem]:border-white/18 max-[40rem]:px-[0.2rem]
-        max-[40rem]:pt-[0.68rem] max-[40rem]:pb-[0.72rem]`}
+        max-[40rem]:pt-[0.68rem] max-[40rem]:pb-[0.72rem] mb-8`}
       aria-label="What makes our food special"
     >
       <TrustItem
