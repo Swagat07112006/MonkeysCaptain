@@ -111,6 +111,68 @@
   scroll-margin-top: 5rem;
 }
 
+.about-section {
+  scroll-margin-top: 5rem;
+}
+
+.gallery-section {
+  scroll-margin-top: 5rem;
+}
+
+.gallery-heading {
+  text-wrap: nowrap;
+}
+
+.gallery-masonry {
+  column-count: 4;
+  column-gap: clamp(0.78rem, 1.8vw, 1.15rem);
+}
+
+.gallery-tile {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  break-inside: avoid;
+  border: 1px solid oklch(82% 0.19 85 / 0.42);
+  border-radius: 0.52rem;
+  background: oklch(5% 0.012 250);
+  box-shadow:
+    0 0.85rem 1.35rem oklch(0% 0 0 / 0.34),
+    0 0 1rem oklch(82% 0.19 85 / 0.13),
+    inset 0 0.08rem 0 oklch(96% 0.01 85 / 0.12);
+}
+
+.gallery-tile::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, oklch(0% 0 0 / 0.04), transparent 44%),
+    radial-gradient(ellipse at 50% 100%, oklch(82% 0.19 85 / 0.1), transparent 76%);
+}
+
+.gallery-tile img {
+  filter: contrast(1.04) saturate(1.08);
+}
+
+.about-founder-image {
+  object-position: center 28%;
+}
+
+.about-label {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.35rem, 3.2vw, 2.45rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  text-shadow:
+    0 0.15rem 0 oklch(48% 0.15 74 / 0.72),
+    0 0.75rem 1.5rem oklch(0% 0 0 / 0.58);
+}
+
 .best-sellers-divider-icon {
   position: relative;
   display: block;
@@ -255,6 +317,10 @@
 @media (min-width: 40.0625rem) and (max-width: 63.9375rem) {
   .best-sellers-section {
     padding-inline: clamp(1.35rem, 4.5vw, 2.6rem);
+  }
+
+  .gallery-masonry {
+    column-count: 3;
   }
 
   .best-sellers-grid > article > div:first-child {
@@ -746,6 +812,19 @@
 }
 
 @media (max-width: 40rem) {
+  .about-image-panel {
+    min-height: clamp(25rem, 118vw, 32rem);
+  }
+
+  .about-founder-image {
+    object-position: center 18%;
+  }
+
+  .about-label {
+    font-size: clamp(1.32rem, 7vw, 1.95rem);
+    letter-spacing: 0.018em;
+  }
+
   .best-sellers-section {
     padding-inline: clamp(0.82rem, 4vw, 1.12rem);
   }
@@ -754,7 +833,16 @@
     width: 100%;
   }
 
+  .gallery-title-lockup {
+    width: 100%;
+  }
+
   .best-sellers-rays {
+    flex: 0 1 clamp(1.7rem, 13vw, 3.25rem);
+    min-width: 1.65rem;
+  }
+
+  .gallery-rays {
     flex: 0 1 clamp(1.7rem, 13vw, 3.25rem);
     min-width: 1.65rem;
   }
@@ -764,6 +852,22 @@
     font-size: clamp(2.2rem, 14vw, 3.2rem);
     letter-spacing: 0.018em;
     line-height: 0.82;
+  }
+
+  .gallery-heading {
+    font-size: clamp(2.35rem, 14vw, 3.35rem);
+    letter-spacing: 0.018em;
+    line-height: 0.86;
+  }
+
+  .gallery-masonry {
+    column-count: 2;
+    column-gap: 0.72rem;
+  }
+
+  .gallery-tile {
+    margin-bottom: 0.72rem;
+    border-radius: 0.48rem;
   }
 
   .best-sellers-heading > span {
