@@ -1,5 +1,6 @@
 import { AboutSection } from "./components/AboutSection";
 import { BestSellersSection } from "./components/BestSellersSection";
+import { ContactSection } from "./components/ContactSection";
 import { GallerySection } from "./components/GallerySection";
 import { HeroBestSellersDivider } from "./components/HeroBestSellersDivider";
 import { HeroSection } from "./components/HeroSection";
@@ -20,6 +21,8 @@ export function App() {
         <AboutSection />
         <HeroBestSellersDivider />
         <GallerySection />
+        <HeroBestSellersDivider />
+        <ContactSection />
       </main>
     </>
   );

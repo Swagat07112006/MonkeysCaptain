@@ -87,7 +87,7 @@ export function useNavigationState() {
       }
     };
 
-    const sectionIds = ["home", "menu", "about", "gallery"];
+    const sectionIds = ["home", "menu", "about", "gallery", "contact"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
