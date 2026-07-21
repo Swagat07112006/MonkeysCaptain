@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useNavigationState() {
+export function useNavigationState(currentView: string) {
   useEffect(() => {
     const DEFAULT_SECTION_HASH = "#home";
     const ACTIVE_LINK_CLASSES = ["border-brand-yellow", "text-brand-yellow"];
@@ -157,5 +157,5 @@ export function useNavigationState() {
         window.clearTimeout(clickScrollTimeout);
       }
     };
-  }, []);
+  }, [currentView]);
 }

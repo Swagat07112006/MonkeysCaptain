@@ -32,53 +32,137 @@ export const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const bestSellers = [
+export interface MenuItem {
+  name: string;
+  description: string;
+  price: string;
+  image: string;
+  alt: string;
+  category: string;
+  isBestSeller?: boolean;
+}
+
+export const menuCategories = [
+  { id: "all", label: "All Items" },
+  { id: "sandwiches", label: "Sandwiches & Snacks" },
+  { id: "mains", label: "Mains & Rice" },
+  { id: "sides", label: "Starters & Sides" },
+];
+
+export const fullMenu: MenuItem[] = [
   {
     name: "Chocolate Sandwich",
     description: "Crispy outside, rich chocolate inside. A perfect sweet bite.",
-    price: "\u20b969",
+    price: "₹69",
     image: chocolateSandwichImage,
     alt: "Chocolate sandwich",
+    category: "sandwiches",
+    isBestSeller: true,
+  },
+  {
+    name: "KitKat Sandwich",
+    description: "Rich chocolate sandwich loaded with crushed KitKat bars.",
+    price: "₹89",
+    image: galleryKitkatSandwichImage,
+    alt: "KitKat chocolate sandwich",
+    category: "sandwiches",
+    isBestSeller: false,
+  },
+  {
+    name: "Grilled Cheese Sandwich",
+    description: "Perfectly toasted local bread stuffed with layers of melted cheese.",
+    price: "₹79",
+    image: galleryGrillSandwichImage,
+    alt: "Vegetable grill cheese sandwich",
+    category: "sandwiches",
+    isBestSeller: false,
+  },
+  {
+    name: "Spicy Veg Burger",
+    description: "Crispy vegetable patty with spicy secret house sauce, lettuce and tomato.",
+    price: "₹89",
+    image: galleryBurgerImage,
+    alt: "Special cheese corn paneer burger",
+    category: "sandwiches",
+    isBestSeller: false,
   },
   {
     name: "Crispy Corn",
-    description:
-      "Crispy, spicy and full of flavor. Everyone's favorite crunch!",
-    price: "\u20b979",
+    description: "Crispy, spicy and full of flavor. Everyone's favorite crunch!",
+    price: "₹79",
     image: crispyCornImage,
     alt: "Crispy corn",
-  },
-  {
-    name: "Dum Biryani",
-    description: "Aromatic rice, juicy chicken and perfect spices.",
-    price: "\u20b9149",
-    image: dumBiryaniImage,
-    alt: "Dum biryani",
-  },
-  {
-    name: "Paneer Momos",
-    description: "Soft momos packed with spicy paneer delight.",
-    price: "\u20b989",
-    image: paneerMomosImage,
-    alt: "Paneer momos",
-  },
-  {
-    name: "Veg Noodles",
-    description: "Wok tossed noodles with fresh veggies and bold taste.",
-    price: "\u20b989",
-    image: vegNoodlesImage,
-    alt: "Veg noodles",
+    category: "sides",
+    isBestSeller: true,
   },
   {
     name: "Chilli Potato",
     description: "Crispy, spicy and tangy chilli potatoes.",
-    price: "\u20b979",
+    price: "₹79",
     image: chilliPotatoImage,
     alt: "Chilli potato",
+    category: "sides",
+    isBestSeller: true,
+  },
+  {
+    name: "French Fries",
+    description: "Classic golden fries, salted to perfection.",
+    price: "₹69",
+    image: crispyCornImage,
+    alt: "Golden french fries",
+    category: "sides",
+    isBestSeller: false,
+  },
+  {
+    name: "Masala Fries",
+    description: "Classic fries tossed in hot peri-peri and local street spices.",
+    price: "₹79",
+    image: crispyCornImage,
+    alt: "Masala fries",
+    category: "sides",
+    isBestSeller: false,
+  },
+  {
+    name: "Dum Biryani",
+    description: "Aromatic rice, juicy chicken and perfect spices.",
+    price: "₹149",
+    image: dumBiryaniImage,
+    alt: "Dum biryani",
+    category: "mains",
+    isBestSeller: true,
+  },
+  {
+    name: "Paneer Momos",
+    description: "Soft momos packed with spicy paneer delight.",
+    price: "₹89",
+    image: paneerMomosImage,
+    alt: "Paneer momos",
+    category: "mains",
+    isBestSeller: true,
+  },
+  {
+    name: "Veg Noodles",
+    description: "Wok tossed noodles with fresh veggies and bold taste.",
+    price: "₹89",
+    image: vegNoodlesImage,
+    alt: "Veg noodles",
+    category: "mains",
+    isBestSeller: true,
+  },
+  {
+    name: "Hakka Noodles",
+    description: "Street-style noodles wok fried with premium soy sauce and bell peppers.",
+    price: "₹99",
+    image: vegNoodlesImage,
+    alt: "Hakka noodles",
+    category: "mains",
+    isBestSeller: false,
   },
 ];
 
-export type BestSeller = (typeof bestSellers)[number];
+export const bestSellers = fullMenu.filter((item) => item.isBestSeller);
+
+export type BestSeller = MenuItem;
 
 export const galleryImages = [
   {

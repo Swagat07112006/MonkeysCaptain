@@ -1,6 +1,6 @@
-import type { BestSeller } from "../content/siteContent";
+import type { MenuItem } from "../content/siteContent";
 
-export function BestSellerCard({ item }: { item: BestSeller }) {
+export function BestSellerCard({ item }: { item: MenuItem }) {
   return (
     <article
       className={`overflow-hidden rounded-[0.72rem] border
@@ -23,19 +23,21 @@ export function BestSellerCard({ item }: { item: BestSeller }) {
           width={1024}
           height={1024}
         />
-        <span
-          className={`bg-brand-yellow absolute top-[0.82rem]
-            left-[0.9rem] z-1 grid size-[3.55rem] place-items-center
-            rounded-full text-center
-            [font-family:Impact,Haettenschweiler,'Arial_Narrow_Bold',sans-serif]
-            text-[0.68rem] leading-[0.82] text-[oklch(7%_0.014_80)]
-            uppercase
-            shadow-[0_0.35rem_0.7rem_oklch(0%_0_0/0.32),inset_0_-0.12rem_0_oklch(60%_0.16_72/0.34)]`}
-        >
-          Best
-          <br />
-          Seller
-        </span>
+        {item.isBestSeller && (
+          <span
+            className={`bg-brand-yellow absolute top-[0.82rem]
+              left-[0.9rem] z-1 grid size-[3.55rem] place-items-center
+              rounded-full text-center
+              [font-family:Impact,Haettenschweiler,'Arial_Narrow_Bold',sans-serif]
+              text-[0.68rem] leading-[0.82] text-[oklch(7%_0.014_80)]
+              uppercase
+              shadow-[0_0.35rem_0.7rem_oklch(0%_0_0/0.32),inset_0_-0.12rem_0_oklch(60%_0.16_72/0.34)]`}
+          >
+            Best
+            <br />
+            Seller
+          </span>
+        )}
       </div>
       <div className="px-[0.95rem] pt-[0.9rem] pb-[0.86rem] text-center">
         <h3

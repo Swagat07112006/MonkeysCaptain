@@ -12,7 +12,7 @@ export function MenuLink() {
         focus-visible:-translate-y-0.5
         focus-visible:text-[oklch(7%_0.014_80)]
         focus-visible:outline-none`}
-      href="#menu"
+      href="#full-menu"
     >
       <MenuBookIcon className="size-8" />
       View Full Menu
