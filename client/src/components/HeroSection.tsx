@@ -7,8 +7,9 @@ import { TrustHighlights } from "./TrustHighlights";
 export function HeroSection() {
   return (
     <section
+      id="home"
       className={`hero-section relative min-h-[calc(100vh-3.5rem)]
-        w-full overflow-hidden pt-28 max-[40rem]:isolate
+        w-full overflow-hidden pt-[11.5rem] max-[40rem]:isolate
         max-[40rem]:min-h-svh max-[40rem]:pt-[clamp(10.6rem,38vw,13rem)]
         max-[40rem]:pb-[1.35rem]`}
       aria-labelledby="hero-title"
