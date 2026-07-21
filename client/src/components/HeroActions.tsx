@@ -1,6 +1,7 @@
 import { ChevronRightIcon } from "./icons/SiteIcons";
 import { EventLink } from "./EventLink";
 import { MapsLink } from "./MapsLink";
+import { MAPS_URL } from "../content/siteContent";
 
 export function HeroActions() {
   return (
@@ -44,7 +45,7 @@ export function HeroActions() {
             transition-colors duration-200 hover:text-neutral-950
             focus-visible:outline-2 focus-visible:outline-offset-4
             focus-visible:outline-yellow-300`}
-          href="https://www.google.com/maps/search/?api=1&query=The+Monkey%27s+Captain"
+          href={MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
         >

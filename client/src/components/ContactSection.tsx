@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MAPS_URL } from "../content/siteContent";
 
 export function ContactSection() {
     const [formData, setFormData] = useState({
@@ -59,19 +60,29 @@ export function ContactSection() {
                         </p>
 
                         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                            {/* Card - Location */}
-                            <div className="contact-info-card flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-[oklch(5%_0.01_250/0.45)] backdrop-blur-sm shadow-md">
-                                <div className="contact-card-icon-wrapper flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow/10 text-brand-yellow">
+                            {/* Card - Location (Clickable Link card) */}
+                            <a
+                                href={MAPS_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contact-info-card group flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-[oklch(5%_0.01_250/0.45)] backdrop-blur-sm shadow-md hover:border-brand-yellow/30 hover:bg-[oklch(8%_0.015_250/0.5)] transition-all duration-200"
+                            >
+                                <div className="contact-card-icon-wrapper flex size-12 shrink-0 items-center justify-center rounded-full bg-brand-yellow/10 text-brand-yellow group-hover:bg-brand-yellow/20 group-hover:scale-105 transition-all">
                                     <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="font-extrabold text-brand-yellow text-sm tracking-wider uppercase mb-1">Our Location</h3>
+                                    <h3 className="font-extrabold text-brand-yellow text-sm tracking-wider uppercase mb-1 flex items-center gap-1.5">
+                                        Our Location
+                                        <span className="text-[0.68rem] font-bold lowercase tracking-normal text-brand-white/40 group-hover:text-brand-yellow transition-colors duration-200 select-none">
+                                            (view on map)
+                                        </span>
+                                    </h3>
                                     <p className="text-[0.9rem] text-brand-white/90">Stall #4, Beach Promenade, Ocean Drive</p>
                                 </div>
-                            </div>
+                            </a>
 
                             {/* Card - Details */}
                             <div className="contact-info-card flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-[oklch(5%_0.01_250/0.45)] backdrop-blur-sm shadow-md">

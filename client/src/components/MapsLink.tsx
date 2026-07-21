@@ -1,3 +1,4 @@
+import { MAPS_URL } from "../content/siteContent";
 import { LocationPinOutlineIcon } from "./icons/SiteIcons";
 
 export function MapsLink() {
@@ -8,7 +9,7 @@ export function MapsLink() {
         text-sm font-bold transition duration-200 ease-out
         focus-visible:outline-2 focus-visible:outline-offset-4
         focus-visible:outline-yellow-300`}
-      href="https://www.google.com/maps/search/?api=1&query=The+Monkey%27s+Captain"
+      href={MAPS_URL}
       target="_blank"
       rel="noopener noreferrer"
     >
