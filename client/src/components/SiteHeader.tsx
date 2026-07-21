@@ -1,16 +1,38 @@
+import { useEffect, useState } from "react";
 import { brandAssets, navItems } from "../content/siteContent";
 import { EventLink } from "./EventLink";
 import { MobileMenuButton } from "./MobileMenuButton";
 
 export function SiteHeader() {
+  const [isSmall, setIsSmall] = useState(false);
+
+  useEffect(() => {
+    const handleScrollAndHash = () => {
+      const isHome = window.location.hash !== "#full-menu";
+      const hasScrolled = window.scrollY > 20;
+      setIsSmall(!isHome || hasScrolled);
+    };
+
+    handleScrollAndHash();
+    window.addEventListener("scroll", handleScrollAndHash, { passive: true });
+    window.addEventListener("hashchange", handleScrollAndHash);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollAndHash);
+      window.removeEventListener("hashchange", handleScrollAndHash);
+    };
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${isSmall ? "is-compact" : ""}`}>
       <div className="site-header-inner relative mx-auto w-full max-w-7xl">
         <img
-          className={`site-logo absolute -top-4 left-6 z-30 w-52
-          max-[40rem]:top-4 max-[40rem]:left-[1.1rem]
-          max-[40rem]:w-[clamp(7.5rem,34vw,10rem)] xl:-top-6 xl:left-10
-          xl:w-64`}
+          className={`site-logo absolute left-6 z-30 transition-all duration-300 ease-out max-[40rem]:left-[1.1rem] xl:left-10
+            ${isSmall
+              ? "w-28 top-2 max-[40rem]:top-2.5 max-[40rem]:w-24 xl:top-1.5 xl:w-[7.5rem]"
+              : "w-52 -top-4 max-[40rem]:top-4 max-[40rem]:w-[clamp(7.5rem,34vw,10rem)] xl:-top-6 xl:w-64"
+            }
+          `}
           src={brandAssets.monkeyLogo}
           alt="The Monkey's Captain"
           width={1024}

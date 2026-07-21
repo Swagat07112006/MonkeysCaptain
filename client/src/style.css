@@ -51,6 +51,12 @@
   padding-top: 1.75rem;
   /* pt-7 */
   padding-bottom: 1.25rem;
+  transition: padding-top 300ms ease, padding-bottom 300ms ease;
+}
+
+.site-header.is-compact .site-header-inner {
+  padding-top: 0.85rem;
+  padding-bottom: 0.75rem;
 }
 
 .hero-heading {
