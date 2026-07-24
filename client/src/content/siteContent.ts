@@ -210,4 +210,5 @@ export const eventTypes = [
   "& More",
 ];
 
-export const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=The+Monkey%27s+Captain";
+export const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=The+Monkey%27s+Captain+8249246576";

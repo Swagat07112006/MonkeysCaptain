@@ -21,7 +21,7 @@ export function TrustHighlights() {
       <TrustItem
         icon={<StarBadgeIcon />}
         label="Google Rating"
-        sublabel="(12 Reviews)"
+        sublabel="(13 Reviews)"
       >
         <StarsIcon />
       </TrustItem>

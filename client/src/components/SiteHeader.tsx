@@ -65,7 +65,7 @@ export function SiteHeader() {
           </div>
         </nav>
         <EventLink
-          className={`header-event-link bg-brand-yellow absolute top-4
+          className={`header-event-link bg-brand-yellow absolute top-1/2 -translate-y-1/2
           right-6 z-20 flex items-center gap-2 rounded-full px-5 py-2.5
           text-sm font-semibold text-neutral-950 transition-colors
           duration-200 hover:bg-yellow-300 focus-visible:outline-2
