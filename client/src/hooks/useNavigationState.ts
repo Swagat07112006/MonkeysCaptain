@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useNavigationState() {
+export function useNavigationState(currentView: string) {
   useEffect(() => {
     const DEFAULT_SECTION_HASH = "#home";
     const ACTIVE_LINK_CLASSES = ["border-brand-yellow", "text-brand-yellow"];
@@ -19,7 +19,7 @@ export function useNavigationState() {
     const mobileNavLinks = document.querySelectorAll<HTMLAnchorElement>(
       "[data-mobile-nav-link]",
     );
-    const allNavLinks = [...navLinks, ...mobileNavLinks];
+    const allNavLinks = [...Array.from(navLinks), ...Array.from(mobileNavLinks)];
 
     function setMobileMenuOpen(isOpen: boolean): void {
       if (!mobileMenuToggle || !mobileMenu || !mobileMenuBackdrop) {
@@ -61,9 +61,20 @@ export function useNavigationState() {
       });
     }
 
+    let isClickScrolling = false;
+    let clickScrollTimeout: number | undefined;
+
     const handleHashChange = () => {
       setActiveLink(window.location.hash);
       setMobileMenuOpen(false);
+
+      isClickScrolling = true;
+      if (clickScrollTimeout) {
+        window.clearTimeout(clickScrollTimeout);
+      }
+      clickScrollTimeout = window.setTimeout(() => {
+        isClickScrolling = false;
+      }, 1000);
     };
     const handleToggleClick = () => {
       const isOpen = mobileMenuToggle?.getAttribute("aria-expanded") === "true";
@@ -75,6 +86,50 @@ export function useNavigationState() {
         setMobileMenuOpen(false);
       }
     };
+
+    const sectionIds = ["home", "menu", "about", "gallery", "contact"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    let activeSectionObserver: IntersectionObserver | null = null;
+
+    if ("IntersectionObserver" in window) {
+      activeSectionObserver = new IntersectionObserver(
+        () => {
+          if (isClickScrolling) return;
+
+          let activeId = "";
+          const detectionLine = window.innerWidth < 640 ? 150 : 120;
+
+          sections.forEach((sect) => {
+            const rect = sect.getBoundingClientRect();
+            if (rect.top <= detectionLine && rect.bottom >= detectionLine) {
+              activeId = sect.id;
+            }
+          });
+
+          // Fallback: if we are at the very bottom of the page, activate the last visible section
+          if (
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 100
+          ) {
+            activeId = sectionIds[sectionIds.length - 1];
+          }
+
+          if (activeId) {
+            setActiveLink(`#${activeId}`);
+          }
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: [0, 0.1, 0.2, 0.3],
+        }
+      );
+
+      sections.forEach((section) => activeSectionObserver?.observe(section));
+    }
 
     window.addEventListener("hashchange", handleHashChange);
     mobileMenuToggle?.addEventListener("click", handleToggleClick);
@@ -94,6 +149,13 @@ export function useNavigationState() {
       });
       window.removeEventListener("keydown", handleKeyDown);
       document.body.classList.remove("mobile-menu-open");
+
+      if (activeSectionObserver) {
+        activeSectionObserver.disconnect();
+      }
+      if (clickScrollTimeout) {
+        window.clearTimeout(clickScrollTimeout);
+      }
     };
-  }, []);
+  }, [currentView]);
 }
