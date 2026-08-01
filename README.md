@@ -44,18 +44,16 @@ npm run format   # Format the project with Prettier
 
 ## Deploying To Vercel
 
-This repository includes `vercel.json`, so importing the GitHub repo into Vercel should work from the repository root.
+Set the Vercel project's Root Directory to `client`. Both the project-root and `client/vercel.json` files are configured for that setup.
 
 The included settings are:
 
 - Framework preset: Vite
-- Install command: `cd client && npm install`
-- Build command: `cd client && npm run build`
-- Output directory: `client/dist`
+- Install command: `npm install`
+- Build command: `npm run build`
+- Output directory: `dist`
 
 Keep Vercel's “Automatically expose System Environment Variables” setting enabled, or set a production `SITE_URL` explicitly. This ensures canonical, sitemap, social-image, and structured-data URLs use the public domain.
-
-If you prefer setting Vercel's root directory to `client`, use `npm install`, `npm run build`, and `dist` instead.
 
 ## Project Structure
 
