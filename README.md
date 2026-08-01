@@ -11,6 +11,7 @@ A bold, mobile-friendly restaurant website for The Monkey's Captain, built with 
 - Pre-rendered HTML for the home page, menu, and every menu item
 - Per-page canonical metadata, social previews, and Schema.org JSON-LD
 - Generated `sitemap.xml`, `robots.txt`, `llms.txt`, and a real noindex 404 page
+- Google Analytics 4 tracking with measurement ID `G-VWV7669M4R`
 
 ## Tech Stack
 

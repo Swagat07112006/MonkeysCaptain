@@ -19,6 +19,7 @@ function countMatches(content, expression) {
 const htmlFiles = walk(distDirectory).filter((file) => file.endsWith(".html"));
 const problems = [];
 const canonicals = new Set();
+const analyticsMeasurementId = "G-VWV7669M4R";
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
@@ -40,6 +41,23 @@ for (const file of htmlFiles) {
 
   if (!/<div id="root"><(?!\/div)/.test(html)) {
     problems.push(`${file} does not contain a pre-rendered React root.`);
+  }
+
+  const analyticsLoaderCount = countMatches(
+    html,
+    new RegExp(
+      `googletagmanager\\.com/gtag/js\\?id=${analyticsMeasurementId}`,
+      "g",
+    ),
+  );
+  const analyticsConfigCount = countMatches(
+    html,
+    new RegExp(`gtag\\(\\"config\\", \\"${analyticsMeasurementId}\\"\\)`, "g"),
+  );
+  if (analyticsLoaderCount !== 1 || analyticsConfigCount !== 1) {
+    problems.push(
+      `${file} must contain one Google Analytics loader and config for ${analyticsMeasurementId}.`,
+    );
   }
 
   const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
