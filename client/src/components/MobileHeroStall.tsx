@@ -20,8 +20,13 @@ export function MobileHeroStall() {
     >
       <picture>
         <source
-          media="(min-width: 40.0625rem) and (max-width: 64rem)"
-          srcSet={brandAssets.heroTabletImage}
+          media="(min-width: 40.0625rem)"
+          srcSet="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+        />
+        <source
+          media="(max-width: 40rem)"
+          srcSet={brandAssets.heroMobileSrcSet}
+          sizes="100vw"
         />
         <img
           className={`max-[40rem]:absolute max-[40rem]:inset-0
@@ -32,6 +37,8 @@ export function MobileHeroStall() {
           alt=""
           width={941}
           height={1672}
+          fetchPriority="high"
+          decoding="async"
         />
       </picture>
     </div>

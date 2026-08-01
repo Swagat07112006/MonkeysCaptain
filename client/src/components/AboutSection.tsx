@@ -1,4 +1,6 @@
-import aboutFounderPortrait from "../assets/about-founder-real-edited.png";
+import aboutFounder480 from "../assets/about-founder-real-edited-480.webp";
+import aboutFounder768 from "../assets/about-founder-real-edited-768.webp";
+import aboutFounder1024 from "../assets/about-founder-real-edited-1024.webp";
 import heroBrushStroke from "../assets/hero-brush-stroke.svg";
 
 export function AboutSection() {
@@ -25,10 +27,14 @@ export function AboutSection() {
           <img
             className={`about-founder-image absolute inset-0 size-full object-cover
               contrast-[1.06] saturate-[1.12]`}
-            src={aboutFounderPortrait}
+            src={aboutFounder768}
+            srcSet={`${aboutFounder480} 480w, ${aboutFounder768} 768w, ${aboutFounder1024} 1024w`}
+            sizes="(max-width: 1024px) calc(100vw - 2rem), 46vw"
             alt="Founder of The Monkey's Captain"
             width={1024}
             height={1024}
+            loading="lazy"
+            decoding="async"
           />
           <div
             className={`absolute inset-0

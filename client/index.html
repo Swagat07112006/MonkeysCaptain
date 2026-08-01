@@ -1,19 +1,72 @@
 <!doctype html>
-<html class="scroll-smooth" lang="en">
+<html
+  class="scroll-smooth"
+  lang="en"
+>
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07080c" />
-    <meta name="color-scheme" content="dark" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/favicon-48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="theme-color"
+      content="#07080c"
+    />
+    <meta
+      name="color-scheme"
+      content="dark"
+    />
+    <!--home-image-preloads-start-->
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/monkeys-captain-hero-mobile-v2-768.webp"
+      imagesrcset="/src/assets/monkeys-captain-hero-mobile-v2-480.webp 480w, /src/assets/monkeys-captain-hero-mobile-v2-768.webp 768w, /src/assets/monkeys-captain-hero-mobile-v2-1024.webp 1024w"
+      imagesizes="100vw"
+      media="(max-width: 40rem)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/monkeys-captain-hero-v2-1536.webp"
+      imagesrcset="/src/assets/monkeys-captain-hero-v2-768.webp 768w, /src/assets/monkeys-captain-hero-v2-1024.webp 1024w, /src/assets/monkeys-captain-hero-v2-1536.webp 1536w"
+      imagesizes="100vw"
+      media="(min-width: 40.0625rem)"
+      fetchpriority="high"
+    />
+    <!--home-image-preloads-end-->
+    <!--app-seo-head-start-->
+    <title>The Monkey's Captain | Street Food in Dumduma, Bhubaneswar</title>
     <meta
       name="description"
-      content="Bold street food and event catering from The Monkey's Captain."
+      content="Visit The Monkey's Captain in Dumduma, Bhubaneswar for fresh grilled sandwiches, burgers, crispy corn, fries and evening snacks."
     />
-    <title>The Monkey's Captain</title>
+    <!--app-seo-head-end-->
     <style>
       /* First-paint canvas: avoid white flash before CSS bundle loads */
       html,
@@ -22,8 +75,14 @@
       }
     </style>
   </head>
-  <body class="overflow-x-hidden" style="background-color: #07080c">
+  <body
+    class="overflow-x-hidden"
+    style="background-color: #07080c"
+  >
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script
+      type="module"
+      src="/src/main.tsx"
+    ></script>
   </body>
 </html>

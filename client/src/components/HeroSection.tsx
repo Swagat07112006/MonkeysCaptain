@@ -18,14 +18,23 @@ export function HeroSection() {
         className={`hero-media absolute inset-y-0 right-0 z-0
           max-[40rem]:hidden`}
       >
-        <img
-          className="h-full w-auto max-w-none"
-          src={brandAssets.heroImage}
-          alt="The Monkey's Captain food stall"
-          width={1672}
-          height={941}
-          fetchPriority="high"
-        />
+        <picture>
+          <source
+            media="(max-width: 40rem)"
+            srcSet="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+          />
+          <img
+            className="h-full w-auto max-w-none"
+            src={brandAssets.heroImage}
+            srcSet={brandAssets.heroSrcSet}
+            sizes="100vw"
+            alt="The Monkey's Captain food stall"
+            width={1672}
+            height={941}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
       <div
         className={`hero-grid relative z-10 mx-auto grid w-full

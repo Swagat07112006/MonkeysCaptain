@@ -19,7 +19,10 @@ export function useNavigationState(currentView: string) {
     const mobileNavLinks = document.querySelectorAll<HTMLAnchorElement>(
       "[data-mobile-nav-link]",
     );
-    const allNavLinks = [...Array.from(navLinks), ...Array.from(mobileNavLinks)];
+    const allNavLinks = [
+      ...Array.from(navLinks),
+      ...Array.from(mobileNavLinks),
+    ];
 
     function setMobileMenuOpen(isOpen: boolean): void {
       if (!mobileMenuToggle || !mobileMenu || !mobileMenuBackdrop) {
@@ -40,7 +43,11 @@ export function useNavigationState(currentView: string) {
       const activeHash = hash || DEFAULT_SECTION_HASH;
 
       allNavLinks.forEach((link) => {
-        const isActive = link.hash === activeHash;
+        const isMenuView =
+          currentView === "menu" || currentView === "menu-item";
+        const isActive = isMenuView
+          ? new URL(link.href, window.location.origin).pathname === "/menu/"
+          : link.hash === activeHash;
 
         if (link.hasAttribute("data-nav-link")) {
           ACTIVE_LINK_CLASSES.forEach((className) => {
@@ -94,7 +101,7 @@ export function useNavigationState(currentView: string) {
 
     let activeSectionObserver: IntersectionObserver | null = null;
 
-    if ("IntersectionObserver" in window) {
+    if (currentView === "home" && "IntersectionObserver" in window) {
       activeSectionObserver = new IntersectionObserver(
         () => {
           if (isClickScrolling) return;
@@ -125,7 +132,7 @@ export function useNavigationState(currentView: string) {
           root: null,
           rootMargin: "0px",
           threshold: [0, 0.1, 0.2, 0.3],
-        }
+        },
       );
 
       sections.forEach((section) => activeSectionObserver?.observe(section));
