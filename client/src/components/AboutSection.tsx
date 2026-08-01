@@ -1,4 +1,4 @@
-import aboutFounderAi from "../assets/about-founder-ai.png";
+import aboutFounderPortrait from "../assets/about-founder-real-edited.png";
 import heroBrushStroke from "../assets/hero-brush-stroke.svg";
 
 export function AboutSection() {
@@ -25,8 +25,8 @@ export function AboutSection() {
           <img
             className={`about-founder-image absolute inset-0 size-full object-cover
               contrast-[1.06] saturate-[1.12]`}
-            src={aboutFounderAi}
-            alt="AI generated founder-style portrait for The Monkey's Captain"
+            src={aboutFounderPortrait}
+            alt="Founder of The Monkey's Captain"
             width={1024}
             height={1024}
           />
@@ -35,15 +35,6 @@ export function AboutSection() {
               bg-[linear-gradient(180deg,oklch(0%_0_0/0.08),oklch(0%_0_0/0.34)),radial-gradient(ellipse_at_52%_92%,oklch(82%_0.19_85/0.2),transparent_42%)]`}
             aria-hidden="true"
           />
-          <figcaption
-            className={`absolute right-3 bottom-3 z-1 rounded-full
-              border border-brand-yellow/45 bg-[oklch(4%_0.01_250/0.78)]
-              px-3 py-1 text-[0.68rem] font-extrabold tracking-[0.08em]
-              text-brand-yellow uppercase shadow-[0_0.45rem_1rem_oklch(0%_0_0/0.38)]
-              backdrop-blur-sm`}
-          >
-            AI generated image
-          </figcaption>
         </figure>
 
         <div className="about-copy max-w-[38rem]">

@@ -52,7 +52,7 @@ export function FullMenuPage() {
                         />
                     </div>
                     <p className="text-[clamp(0.88rem,1vw,1.02rem)] text-brand-white/80 max-w-xl mx-auto leading-relaxed">
-                        Taste the true fire of street-style recipe perfection. Crafted from fresh local ingredients.
+                        Hot grilled sandwiches and crispy snacks, served fresh at street-friendly prices.
                     </p>
                 </div>
 

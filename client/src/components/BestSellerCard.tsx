@@ -42,8 +42,9 @@ export function BestSellerCard({ item }: { item: MenuItem }) {
       <div className="px-[0.95rem] pt-[0.9rem] pb-[0.86rem] text-center">
         <h3
           className={`[font-family:Impact,Haettenschweiler,'Arial_Narrow_Bold',sans-serif]
-            text-[clamp(1rem,1.25vw,1.2rem)] leading-[0.95]
-            whitespace-nowrap text-[oklch(96%_0.008_85)] uppercase
+            grid min-h-[2.3rem] place-items-center
+            text-[clamp(1rem,1.25vw,1.2rem)] leading-[1]
+            text-balance text-[oklch(96%_0.008_85)] uppercase
             [text-shadow:0_0.35rem_0.8rem_oklch(0%_0_0/0.44)]`}
         >
           {item.name}
@@ -55,15 +56,31 @@ export function BestSellerCard({ item }: { item: MenuItem }) {
         >
           {item.description}
         </p>
-        <strong
-          className={`text-brand-yellow mt-[0.74rem] block border-t
+        <div
+          className={`text-brand-yellow mt-[0.74rem] border-t
             border-dashed border-[oklch(82%_0.19_85/0.36)] pt-[0.62rem]
             [font-family:Impact,Haettenschweiler,'Arial_Narrow_Bold',sans-serif]
-            text-[clamp(1.9rem,2.55vw,2.35rem)] leading-[0.9]
             tracking-[0.02em]`}
         >
-          {item.price}
-        </strong>
+          {typeof item.price === "string" ? (
+            <strong className="block text-[clamp(1.9rem,2.55vw,2.35rem)] leading-[0.9]">
+              {item.price}
+            </strong>
+          ) : (
+            <div className="grid grid-cols-2 divide-x divide-brand-yellow/25">
+              {item.price.map((option) => (
+                <div key={option.label} className="px-1">
+                  <span className="block font-sans text-[0.58rem] leading-none font-black tracking-[0.04em] text-brand-white/65 uppercase">
+                    {option.label}
+                  </span>
+                  <strong className="mt-1 block text-[clamp(1.35rem,2vw,1.8rem)] leading-none">
+                    {option.value}
+                  </strong>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </article>
   );

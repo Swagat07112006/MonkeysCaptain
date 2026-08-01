@@ -1,9 +1,9 @@
 import chocolateSandwichImage from "../assets/best-sellers/chocolate-sandwich.png";
-import chilliPotatoImage from "../assets/best-sellers/chilli-potato.png";
 import crispyCornImage from "../assets/best-sellers/crispy-corn.png";
-import dumBiryaniImage from "../assets/best-sellers/dum-biryani.png";
-import paneerMomosImage from "../assets/best-sellers/paneer-momos.png";
-import vegNoodlesImage from "../assets/best-sellers/veg-noodles.png";
+import crispyVegFingerImage from "../assets/best-sellers/crispy-veg-finger.png";
+import masalaFriesImage from "../assets/best-sellers/masala-fries.png";
+import paneerCheeseSandwichImage from "../assets/best-sellers/paneer-cheese-sandwich.png";
+import vegGrilledSandwichImage from "../assets/best-sellers/veg-grilled-sandwich.png";
 import galleryBurgerImage from "../assets/gallery/gallery-burger.webp";
 import galleryEventDecorImage from "../assets/gallery/gallery-event-decor.webp";
 import galleryEventEntranceImage from "../assets/gallery/gallery-event-entrance.webp";
@@ -35,7 +35,7 @@ export const navItems = [
 export interface MenuItem {
   name: string;
   description: string;
-  price: string;
+  price: string | { label: string; value: string }[];
   image: string;
   alt: string;
   category: string;
@@ -44,119 +44,103 @@ export interface MenuItem {
 
 export const menuCategories = [
   { id: "all", label: "All Items" },
-  { id: "sandwiches", label: "Sandwiches & Snacks" },
-  { id: "mains", label: "Mains & Rice" },
-  { id: "sides", label: "Starters & Sides" },
+  { id: "sandwiches", label: "Sandwiches" },
+  { id: "snacks", label: "Crispy Snacks" },
 ];
 
 export const fullMenu: MenuItem[] = [
   {
-    name: "Chocolate Sandwich",
-    description: "Crispy outside, rich chocolate inside. A perfect sweet bite.",
-    price: "₹69",
+    name: "Veg Grilled Sandwich",
+    description: "A hot, crisp grilled vegetable sandwich with your choice of bread.",
+    price: [
+      { label: "Milk Bread", value: "₹50" },
+      { label: "Brown Bread", value: "₹60" },
+    ],
+    image: vegGrilledSandwichImage,
+    alt: "Vegetable grilled sandwich",
+    category: "sandwiches",
+    isBestSeller: true,
+  },
+  {
+    name: "Special Veg Grilled Jumbo",
+    description: "Our extra-large special vegetable grilled sandwich for a bigger appetite.",
+    price: "₹120",
+    image: vegGrilledSandwichImage,
+    alt: "Special jumbo vegetable grilled sandwich",
+    category: "sandwiches",
+    isBestSeller: false,
+  },
+  {
+    name: "Grilled Chocolate Sandwich",
+    description: "Golden grilled bread with a warm, rich chocolate centre.",
+    price: [
+      { label: "Milk Bread", value: "₹50" },
+      { label: "Brown Bread", value: "₹60" },
+    ],
     image: chocolateSandwichImage,
-    alt: "Chocolate sandwich",
+    alt: "Grilled chocolate sandwich",
     category: "sandwiches",
     isBestSeller: true,
   },
   {
-    name: "KitKat Sandwich",
-    description: "Rich chocolate sandwich loaded with crushed KitKat bars.",
-    price: "₹89",
+    name: "Paneer Cheese Sandwich",
+    description: "A hearty grilled sandwich filled with paneer and melted cheese.",
+    price: [
+      { label: "Milk Bread", value: "₹60" },
+      { label: "Brown Bread", value: "₹70" },
+    ],
+    image: paneerCheeseSandwichImage,
+    alt: "Paneer cheese grilled sandwich",
+    category: "sandwiches",
+    isBestSeller: true,
+  },
+  {
+    name: "Nutella / KitKat Sandwich",
+    description: "Choose Choco Nutella & Cream or KitKat Cheese Chocolate.",
+    price: [
+      { label: "Milk Bread", value: "₹70" },
+      { label: "Brown Bread", value: "₹80" },
+    ],
     image: galleryKitkatSandwichImage,
-    alt: "KitKat chocolate sandwich",
+    alt: "Nutella and KitKat chocolate sandwich",
     category: "sandwiches",
     isBestSeller: false,
   },
   {
-    name: "Grilled Cheese Sandwich",
-    description: "Perfectly toasted local bread stuffed with layers of melted cheese.",
-    price: "₹79",
-    image: galleryGrillSandwichImage,
-    alt: "Vegetable grill cheese sandwich",
-    category: "sandwiches",
-    isBestSeller: false,
-  },
-  {
-    name: "Spicy Veg Burger",
-    description: "Crispy vegetable patty with spicy secret house sauce, lettuce and tomato.",
-    price: "₹89",
-    image: galleryBurgerImage,
-    alt: "Special cheese corn paneer burger",
-    category: "sandwiches",
-    isBestSeller: false,
-  },
-  {
-    name: "Crispy Corn",
-    description: "Crispy, spicy and full of flavor. Everyone's favorite crunch!",
-    price: "₹79",
+    name: "Plain Crispy Corn",
+    description: "Golden, crunchy corn served hot and simply seasoned.",
+    price: "₹60",
     image: crispyCornImage,
-    alt: "Crispy corn",
-    category: "sides",
-    isBestSeller: true,
+    alt: "Plain crispy corn",
+    category: "snacks",
+    isBestSeller: false,
   },
   {
-    name: "Chilli Potato",
-    description: "Crispy, spicy and tangy chilli potatoes.",
-    price: "₹79",
-    image: chilliPotatoImage,
-    alt: "Chilli potato",
-    category: "sides",
-    isBestSeller: true,
-  },
-  {
-    name: "French Fries",
-    description: "Classic golden fries, salted to perfection.",
-    price: "₹69",
+    name: "Vegetable Crispy Corn",
+    description: "Crunchy corn tossed with chopped vegetables and seasoning.",
+    price: "₹70",
     image: crispyCornImage,
-    alt: "Golden french fries",
-    category: "sides",
-    isBestSeller: false,
-  },
-  {
-    name: "Masala Fries",
-    description: "Classic fries tossed in hot peri-peri and local street spices.",
-    price: "₹79",
-    image: crispyCornImage,
-    alt: "Masala fries",
-    category: "sides",
-    isBestSeller: false,
-  },
-  {
-    name: "Dum Biryani",
-    description: "Aromatic rice, juicy chicken and perfect spices.",
-    price: "₹149",
-    image: dumBiryaniImage,
-    alt: "Dum biryani",
-    category: "mains",
+    alt: "Vegetable crispy corn",
+    category: "snacks",
     isBestSeller: true,
   },
   {
-    name: "Paneer Momos",
-    description: "Soft momos packed with spicy paneer delight.",
-    price: "₹89",
-    image: paneerMomosImage,
-    alt: "Paneer momos",
-    category: "mains",
+    name: "Crispy Veg Finger",
+    description: "Crisp, golden vegetable fingers with a tender savoury centre.",
+    price: "₹70",
+    image: crispyVegFingerImage,
+    alt: "Crispy vegetable fingers",
+    category: "snacks",
     isBestSeller: true,
   },
   {
-    name: "Veg Noodles",
-    description: "Wok tossed noodles with fresh veggies and bold taste.",
-    price: "₹89",
-    image: vegNoodlesImage,
-    alt: "Veg noodles",
-    category: "mains",
+    name: "Masala French Fries",
+    description: "Hot, crisp fries tossed in a punchy masala seasoning.",
+    price: "₹70",
+    image: masalaFriesImage,
+    alt: "Masala french fries",
+    category: "snacks",
     isBestSeller: true,
-  },
-  {
-    name: "Hakka Noodles",
-    description: "Street-style noodles wok fried with premium soy sauce and bell peppers.",
-    price: "₹99",
-    image: vegNoodlesImage,
-    alt: "Hakka noodles",
-    category: "mains",
-    isBestSeller: false,
   },
 ];
 
@@ -211,4 +195,4 @@ export const eventTypes = [
 ];
 
 export const MAPS_URL =
-  "https://www.google.com/maps/search/?api=1&query=The+Monkey%27s+Captain+8249246576";
+  "https://maps.app.goo.gl/6bfpNfa3rMrX4bt28";

@@ -4,7 +4,9 @@ import { MAPS_URL, brandAssets } from "../content/siteContent";
 
 const PHONE_DISPLAY = "+91 82492 46576";
 const PHONE_LINK = "+918249246576";
-const EMAIL = "captain@monkeyscaptain.com";
+const WHATSAPP_URL = `https://wa.me/${PHONE_LINK}?text=${encodeURIComponent(
+  "Hi, I'd like to enquire about The Monkey's Captain.",
+)}`;
 
 function ArrowIcon() {
   return (
@@ -62,13 +64,13 @@ export function ContactSection() {
           <div>
             <p className="contact-kicker">Contact us</p>
             <h2 id="contact-title">
-              Hungry? Let&apos;s
-              <span>make it happen.</span>
+              Planning a visit?
+              <span>Talk to the Captain.</span>
             </h2>
           </div>
           <p className="contact-intro-copy">
-            Quick orders, big parties, or a little feedback—reach the Captain
-            directly. No call centres. No long forms.
+            For directions, stall enquiries, events, or feedback, reach the
+            Captain directly on WhatsApp or call us.
           </p>
         </header>
 
@@ -83,20 +85,20 @@ export function ContactSection() {
             <div className="contact-booking-copy">
               <span className="contact-status">
                 <i aria-hidden="true" />
-                Taking orders now
+                Open daily · 4:00 PM–11:30 PM
               </span>
               <p className="contact-eyebrow">Fastest way to reach us</p>
               <h3>Chat with the Captain</h3>
               <p>
-                Send your order or event details on WhatsApp. We&apos;ll confirm
-                availability, menu, and pricing with you.
+                Message us for visit details, event bookings, or general
+                enquiries. Food orders are served offline at the stall.
               </p>
             </div>
 
             <div className="contact-primary-actions">
               <a
                 className="contact-whatsapp-button"
-                href={`https://wa.me/${PHONE_LINK}`}
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -106,7 +108,7 @@ export function ContactSection() {
                   </svg>
                 </span>
                 <span>
-                  <small>Order on WhatsApp</small>
+                  <small>Enquire on WhatsApp</small>
                   {PHONE_DISPLAY}
                 </span>
                 <ArrowIcon />
@@ -132,10 +134,6 @@ export function ContactSection() {
                 <p>Open daily · 4:00 PM–11:30 PM</p>
                 <span>Open all 7 days</span>
               </DetailRow>
-            </div>
-            <div className="contact-email-row">
-              <span>For detailed enquiries</span>
-              <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
             </div>
           </aside>
 
